@@ -1,2 +1,0 @@
-- Hexo + GitHub Page + Github Actions
-- LeetCode
