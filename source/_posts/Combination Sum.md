@@ -1,7 +1,7 @@
 ---
 title: Combination Sum
 date: 2022-01-31 09:00:00
-tags: Algorithm 
+categories: Algorithm
 ---
 
 ### Problem 
