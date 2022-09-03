@@ -80,6 +80,6 @@ I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Actio
 
 ### Almost Done
 
-We could optionally install [blog themes](https://hexo.io/themes/) and write interesting posts locally. Just a click to push code to Github and wait for automatic deployment. Finally, we could also set our custom domain in Github instead of the default domain `https://your_user_name.github.io`.
+We could optionally install [blog themes](https://hexo.io/themes/) and write interesting posts locally. Just a click to push code to Github and wait for the automatic blog deployment. Now we could visit the blog on the default domain `https://your_user_name.github.io`, which could also be set to our custom domain on Github.
 
 ### Enjoy!
