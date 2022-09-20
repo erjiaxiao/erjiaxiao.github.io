@@ -4,9 +4,9 @@ date: 2022-02-23 09:00:00
 categories: Algorithm
 ---
 
-The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three, representing their university, work to solve the most real-world problems, fostering collaboration, creativity, innovation, and the ability to perform under pressure. Since every minute in the match is precious, here are some time-saving templates
+The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three, representing their university, work to solve the most real-world problems, fostering collaboration, creativity, innovation, and the ability to perform under pressure. Since every minute in the match is precious, here are some time-saving templates.
 
-```cpp
+```
 #include <iostream>
 #include <iomanip>
 #include <cstdio>
