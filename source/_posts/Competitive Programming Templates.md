@@ -1,5 +1,5 @@
 ---
-title: Competitive Programming Template
+title: Competitive Programming Templates
 date: 2022-02-23 09:00:00
 categories: Algorithm
 ---
