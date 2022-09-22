@@ -4,6 +4,8 @@ date: 2022-01-23 09:00:00
 categories: Toolkit
 ---
 
+### Introduction
+
 I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code modifications to GitHub. It's free, convenient and, most importantly, enjoyable to set up! Let's dive in!
 
 ### Set up Hexo Locally
@@ -25,61 +27,63 @@ I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Actio
   hexo s
   ```
 
-### Prepare a Repository and Set the Workflow
+### Prepare the Repository
 
-- Create a repository named `your_user_name.github.io` on Github and create two branches named `master` and `hexo`. Note that `your_user_name` here must be the same as your Github account.
-- Add a file `myblog/.github/workflows/deployment` to make continuous deployment.
+Create a repository named `your_user_name.github.io` on Github and create two branches named `master` and `hexo`. Note that `your_user_name` here must be the same as your Github account.
 
-  ```yaml
-   name: Deployment
+### Add the Workflow File
 
-   on:
-   push:
-       branches: [hexo] # only push events on source branch trigger deployment
+Add a file `myblog/.github/workflows/deployment` to make continuous deployment via GitHub Action.
 
-   jobs:
-   hexo-deployment:
-       runs-on: ubuntu-latest
-       env:
-       TZ: Asia/Shanghai
+```yaml
+ name: Deployment
 
-       steps:
-       - name: Checkout source
-       uses: actions/checkout@v2
-       with:
-           submodules: true
+ on:
+ push:
+     branches: [hexo] # only push events on source branch trigger deployment
 
-       - name: Setup Node.js
-       uses: actions/setup-node@v1
-       with:
-           node-version: '12.x'
+ jobs:
+ hexo-deployment:
+     runs-on: ubuntu-latest
+     env:
+     TZ: Asia/Shanghai
 
-       - name: Install dependencies & Generate static files
-       run: |
-           node -v
-           npm i -g hexo-cli
-           npm i
-           hexo clean
-           hexo g
+     steps:
+     - name: Checkout source
+     uses: actions/checkout@v2
+     with:
+         submodules: true
 
-       - name: Deploy to Github Pages
-       env:
-           GIT_NAME: your_user_name
-           GIT_EMAIL: your_email
-           REPO: github.com/your_user_name/your_user_name.github.io
-           GH_TOKEN: ${{ secrets.GH_TOKEN }}    # Generate it in the Github setting for access permission
-       run: |
-           cd ./public && echo cloudwind.tech > CNAME && git init && git add .
-           git config --global user.name $GIT_NAME
-           git config --global user.email $GIT_EMAIL
-           git commit -m "Site deployed by GitHub Actions"
-           git push --force --quiet "https://$GH_TOKEN@$REPO" master:master
-  ```
+     - name: Setup Node.js
+     uses: actions/setup-node@v1
+     with:
+         node-version: '12.x'
 
-- Push the directory `myblog` to the `hexo` branch. Note that Since we have set the workflow for Github Action, each time we push code to the `hexo` branch. Github will help us compile them and save all the generated static files in the `master` branch, which saves us tons of time spent on manually deploying the blog.
+     - name: Install dependencies & Generate static files
+     run: |
+         node -v
+         npm i -g hexo-cli
+         npm i
+         hexo clean
+         hexo g
 
-### Almost Done
+     - name: Deploy to Github Pages
+     env:
+         GIT_NAME: your_user_name
+         GIT_EMAIL: your_email
+         REPO: github.com/your_user_name/your_user_name.github.io
+         GH_TOKEN: ${{ secrets.GH_TOKEN }}    # Generate it in the Github setting for access permission
+     run: |
+         cd ./public && echo cloudwind.tech > CNAME && git init && git add .
+         git config --global user.name $GIT_NAME
+         git config --global user.email $GIT_EMAIL
+         git commit -m "Site deployed by GitHub Actions"
+         git push --force --quiet "https://$GH_TOKEN@$REPO" master:master
+```
 
-We could optionally install [blog themes](https://hexo.io/themes/) and write interesting posts locally. Just a click to push code to Github and wait for the automatic blog deployment. Now we could visit the blog on the default domain `https://your_user_name.github.io`, which could also be set to our custom domain on Github.
+### Write Posts and Push Code
 
-### Enjoy!
+- Write Posts locally and save them in `myblog/source/_posts`.
+- Push the directory `myblog` to the `hexo` branch. Note that Since we have set the workflow, whenever we push code, Github Action will help us compile and save all the generated static files in the `master` branch, which saves us tons of time spent on manually deploying the blog.
+- We could also optionally install [blog themes](https://hexo.io/themes/). Now the blog can be visited on the default domain `https://your_user_name.github.io`, which could be customized to our own domain in the repository setting on Github.
+- Enjoy!
