@@ -1,6 +1,6 @@
 ---
-title: About Me
-date: 2022-08-31 09:31:50
+title: about
+layout: about
 ---
 
 Welcome to my blog!
