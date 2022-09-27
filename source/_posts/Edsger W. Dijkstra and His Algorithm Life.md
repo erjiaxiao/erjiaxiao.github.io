@@ -1,10 +1,10 @@
 ---
 title: Edsger W. Dijkstra and His Algorithm Life
 date: 2022-03-01 09:00:00
-index_img: /img/Dijkstra.png
+index_img: /img/Dijkstra.jpg
 ---
 
-![Edsger W. Dijkstra](/img/Dijkstra.png)
+![Edsger W. Dijkstra](/img/Dijkstra.jpg)
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
