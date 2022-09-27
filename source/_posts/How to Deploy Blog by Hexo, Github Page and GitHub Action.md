@@ -1,7 +1,8 @@
 ---
-title: How to Deploy Blog by Hexo, Github Page and GitHub Action
+title: How to Deploy Blog by Hexo and Github
 date: 2022-01-23 09:00:00
 categories: Toolkit
+index_img: /img/github_page.jpg
 ---
 
 ### Introduction
