@@ -1,14 +1,16 @@
 ---
 title: Edsger W. Dijkstra and His Algorithm Life
 date: 2022-03-01 09:00:00
+categories: Experience
 index_img: /img/Dijkstra.jpg
+excerpt: After solving a problem about the shortest path on CodeForces, I search for the Dijkstra algorithm for more information. I guess this is the most common way people know about Edsger W. Dijkstra.
 ---
 
+### Introduction
+
+After solving a problem about the shortest path on CodeForces, I search for the Dijkstra algorithm for more information. I guess this is the most common way people know about Edsger W. Dijkstra, the inventor of the Dijkstra algorithm.
+
 ![Edsger W. Dijkstra](/img/Dijkstra.jpg)
-
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
-## Quick Start
 
 ### Create a new post
 

@@ -3,6 +3,7 @@ title: Competitive Programming Templates
 date: 2022-02-23 09:00:00
 categories: Algorithm
 index_img: /img/acmicpc.jpg
+excerpt: The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three, representing their university, work to solve the most real-world problems.
 ---
 
 ### Introduction
