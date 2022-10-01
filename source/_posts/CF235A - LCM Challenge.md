@@ -3,7 +3,7 @@ title: CF235A - LCM Challenge
 date: 2022-03-05 09:00:00
 categories: Algorithm
 index_img: /img/codeforces.jpg
-excerpt: Number Theory
+excerpt: Math
 ---
 
 ### Problem
@@ -17,15 +17,12 @@ test
 ### Solution
 
 ```cpp
-#include <iostream>
-#include <iomanip>
-#include <map>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <cmath>
+#include <bits/stdc++.h>
 
 using namespace std;
+
+#define LOCAL
+#define MOD 1000000007
 
 typedef long long ll;
 
