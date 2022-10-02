@@ -42,7 +42,7 @@ using namespace std;
 #define PI (acos(-1.0))
 #define INF 0x3f3f3f3f
 //必加
-#ifdef TanJI
+#ifdef LOCAL
 #include <cassert>
 #define dbg(...)                                        \
     do                                                  \
@@ -248,7 +248,7 @@ bool Check(long double mid)
 
 int main()
 {
-#ifdef TanJI
+#ifdef LOCAL
     clock_t c1 = clock();
     freopen("D:\\Cpp\\1.in", "r", stdin);
     freopen("D:\\Cpp\\1.out", "w", stdout);
@@ -277,7 +277,7 @@ int main()
     printf("%.9Lf", lM);
 
 //--------------------------------------------
-#ifdef TanJI
+#ifdef LOCAL
     cerr << "Time Used:" << clock() - c1 << "ms" << endl;
 #endif
     return 0;
