@@ -76,7 +76,7 @@ Add a file `myblog/.github/workflows/deployment` to make continuous deployment v
          GIT_NAME: your_user_name
          GIT_EMAIL: your_email
          REPO: github.com/your_user_name/your_user_name.github.io
-         GH_TOKEN: ${{ secrets.GH_TOKEN }}    # Generate it in the Github setting for access permission
+         GH_TOKEN: ${{ secrets.GH_TOKEN }}    # can be created or changed in the Github/Repository/Setting/Secrets/Actions
      run: |
          cd ./public && echo cloudwind.tech > CNAME && git init && git add .
          git config --global user.name $GIT_NAME
