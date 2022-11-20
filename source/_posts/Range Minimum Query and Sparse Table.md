@@ -3,7 +3,7 @@ title: Range Minimum Query and Sparse Table
 date: 2022-03-23 09:00:00
 categories: Algorithm
 index_img: /img/flammarion_woodcut.jpg
-excerpt: I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code to GitHub.
+excerpt: Sparse table concept is used for fast queries on a set of static data (elements do not change). It does preprocessing so that the queries can be answered efficiently.
 ---
 
 ## Introduction
