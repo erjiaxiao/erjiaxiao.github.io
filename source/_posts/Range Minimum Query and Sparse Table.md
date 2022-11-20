@@ -2,7 +2,7 @@
 title: Range Minimum Query and Sparse Table
 date: 2022-03-23 09:00:00
 categories: Algorithm
-index_img: /img/github_page.jpg
+index_img: /img/flammarion_woodcut.jpg
 excerpt: I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code to GitHub.
 ---
 
@@ -10,7 +10,7 @@ excerpt: I have recently deployed my personal blog via Hexo, GitHub Page and Git
 
 We have an array arr[0 . . . n-1]. We should be able to efficiently find the minimum value from index L (query start) to R (query end) where 0 <= L <= R <= n-1. Consider a situation when there are many range queries as following:
 
-```cpp
+```
 Input:  arr[]   = {7, 2, 3, 0, 5, 10, 3, 12, 18};
         query[] = [0, 4], [4, 7], [7, 8]
 
@@ -29,9 +29,9 @@ A Simple Solution is to create a 2D array lookup[][] where an entry lookup[i][j]
 
 This approach supports queries in $O(1)$, but preprocessing takes $O(n^2)$ time. Also, this approach needs $O(n)$ extra space which may become huge for large input arrays.
 
-## Method 2 (Sparse Table Algorithm) 
+## Method 2 (Sparse Table) 
 
-The idea is to precompute a minimum of all subarrays of size $2^j$ where j varies from 0 to $log_n$. Like method 1, we make a lookup table. Here lookup[i][j] contains a minimum of range starting from i and of size $2^j$. For example lookup[0][3] contains a minimum of range [0, 7] (starting with 0 and of size $2^3$)
+The idea is to precompute a minimum of all subarrays of size $2^j$ where j varies from 0 to $log_n$. Like method 1, we make a lookup table. Here lookup[i][j] contains a minimum of range starting from i and of size $2^j$. For example lookup[0][3] contains a minimum of range [0, 7] (starting with 0 and of size $2^3$).
 
 ### Preprocessing
 
@@ -44,7 +44,7 @@ b) Minimum of range [4, 7]
 
 Based on the above example, below is the formula,
 
-```cpp
+```
 // If arr[lookup[0][2]] <=  arr[lookup[4][2]],
 // then lookup[0][3] = lookup[0][2]
 if arr[lookup[i][j-1]] <= arr[lookup[i+2j-1][j-1]]
@@ -63,7 +63,7 @@ else
 For any arbitrary range [l, R], we need to use ranges that are in powers of 2. The idea is to use the closest power of 2. We always need to do at most one comparison (compare a minimum of two ranges which are powers of 2). One range starts with L and ends with “L + closest-power-of-2”. The other range ends at R and starts with “R – same-closest-power-of-2 + 1”. For example, if the given range is (2, 10), we compare a minimum of two ranges (2, 9) and (3, 10). 
 Based on the above example, below is the formula,
 
-```cpp
+```
 // For (2,10), j = floor(Log2(10-2+1)) = 3
 j = floor(Log(R-L+1))
 
@@ -78,4 +78,4 @@ else
    RMQ(L, R) = lookup[R-(int)pow(2,j)+1][j]
 ```
 
-Since we do only one comparison, the time complexity of the query is $O(1)$. So sparse table method supports query operation in O(1) time with O(n Log n) preprocessing time and O(n Log n) space.
+Since we do only one comparison, the time complexity of the query is $O(1)$. So sparse table method supports query operation in $O(1)$ time with $O(n log n)$ preprocessing time and $O(n log n)$ space.
