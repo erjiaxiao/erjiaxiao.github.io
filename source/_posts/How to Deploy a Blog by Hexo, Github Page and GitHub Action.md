@@ -6,13 +6,13 @@ index_img: /img/github_page.jpg
 excerpt: I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code to GitHub.
 ---
 
-### Introduction
+## Introduction
 
 I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code to GitHub. It's free, convenient and, most importantly, enjoyable to set up! Let's dive in!
 
 ![Github](/img/github_page.jpg)
 
-### Set up Hexo Locally
+## Set up Hexo Locally
 
 - Download and implement [Node.js](https://nodejs.org/en/download/) on the laptop, in which I use the operating system of Windows.
 - Execute the following bash in the command line to check if Node.js is installed correctly and install the hexo toolkit.
@@ -31,11 +31,11 @@ I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Actio
   hexo s
   ```
 
-### Prepare the Repository
+## Prepare the Repository
 
 Create a repository named `your_user_name.github.io` on Github and create two branches named `master` and `hexo`. Note that `your_user_name` here must be the same as your Github account.
 
-### Add the Workflow File
+## Add the Workflow File
 
 Add a file `myblog/.github/workflows/deployment` to make continuous deployment via GitHub Action.
 
@@ -85,7 +85,7 @@ Add a file `myblog/.github/workflows/deployment` to make continuous deployment v
          git push --force --quiet "https://$GH_TOKEN@$REPO" master:master
 ```
 
-### Write Posts and Push Code
+## Write Posts and Push Code
 
 - Write Posts locally and save them in `myblog/source/_posts`.
 - Push the directory `myblog` to the `hexo` branch. Note that Since we have set the workflow, whenever we push code, Github Action will help us compile and save all the generated static files in the `master` branch, which saves us tons of time spent on manually deploying the blog.
