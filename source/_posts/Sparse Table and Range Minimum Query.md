@@ -1,10 +1,10 @@
 ---
-title: Range Minimum Query and Sparse Table
-date: 2022-03-23 09:00:00
+title: Sparse Table and Range Minimum Query
+date: 2022-03-10 09:00:00
 categories: Algorithm
 index_img: /img/SparseTable.png
 math: true
-excerpt: Sparse table concept is used for fast queries on a set of static data (elements do not change). It does preprocessing so that the queries can be answered efficiently.
+excerpt: Sparse table concept is used for fast queries on a set of static data which means elements do not change. It does preprocessing so that the queries can be answered efficiently.
 ---
 
 ## Introduction

@@ -1,14 +1,14 @@
 ---
-title: How to Deploy a Blog by Hexo and Github
-date: 2022-01-23 09:00:00
+title: How to Deploy a Personal Blog with Github and Hexo
+date: 2022-01-07 09:00:00
 categories: Toolkit
 index_img: /img/github_page.jpg
-excerpt: I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code to GitHub.
+excerpt: I have recently deployed my personal blog with GitHub and Hexo, which supports continuous deployment when pushing code to GitHub.
 ---
 
 ## Introduction
 
-I have recently deployed my personal blog via Hexo, GitHub Page and GitHub Action, which supports continuous deployment when pushing code to GitHub. It's free, convenient and, most importantly, enjoyable to set up! Let's dive in!
+I have recently deployed my personal blog with GitHub and Hexo, which supports continuous deployment when pushing code to GitHub. It's free, convenient and, most importantly, enjoyable to set up! Let's dive in!
 
 ![Github](/img/github_page.jpg)
 
