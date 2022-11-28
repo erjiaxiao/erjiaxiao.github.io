@@ -8,7 +8,7 @@ excerpt: In order to avoid the annoying TLE(Time Limit Exceed) problem in compet
 
 ## Introduction
 
-In competitive programming, it is important to read input as fast as possible so we save valuable time. You must have seen various problem statements saying: "Warning: Large I/O data, be careful with certain languages (though most should be OK if the algorithm is well designed)". The key for such problems is to use Faster I/O techniques. 
+In competitive programming, it is important to read input as fast as possible so we save valuable time. You must have seen various problem statements saying: "Warning: Large I/O data, be careful with certain languages (though most should be OK if the algorithm is well designed and has low time complexity)". The key for such problems is to use Faster I/O techniques. 
 
 ## Method 1
 
