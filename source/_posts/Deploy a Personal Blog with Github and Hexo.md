@@ -1,5 +1,5 @@
 ---
-title: How to Deploy a Personal Blog with Github and Hexo
+title: Deploy a Personal Blog with Github and Hexo
 date: 2022-01-07 09:00:00
 categories: Toolkit
 index_img: /img/github_page.jpg
