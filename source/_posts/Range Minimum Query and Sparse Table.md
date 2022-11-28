@@ -2,7 +2,7 @@
 title: Range Minimum Query and Sparse Table
 date: 2022-03-23 09:00:00
 categories: Algorithm
-index_img: /img/flammarion_woodcut.jpg
+index_img: /img/SparseTable.png
 math: true
 excerpt: Sparse table concept is used for fast queries on a set of static data (elements do not change). It does preprocessing so that the queries can be answered efficiently.
 ---
@@ -26,7 +26,7 @@ This is the **Range Minimum Query** problem. A brute force solution is to run a 
 
 A Simple Solution is to create a 2D array lookup[][] where an entry lookup[i][j] stores the minimum value in range arr[i..j]. The minimum of a given range can now be calculated in $O(1)$ time.
 
-![Lookup Table](https://media.geeksforgeeks.org/wp-content/cdn-uploads/rmqSimple-1.png)
+![Lookup Table](/img/RMQ_simple.png)
 
 This approach supports queries in $O(1)$, but preprocessing takes $O(n^2)$ time. Also, this approach needs $O(n)$ extra space which may become huge for large input arrays.
 
@@ -53,7 +53,7 @@ for(int j=1; j<len(lookup[0]); j++){
 }
 ```
 
-![Lookup Table](https://media.geeksforgeeks.org/wp-content/cdn-uploads/rmqSparseTable-1.png)
+![Lookup Table](/img/RMQ_SparseTable.png)
 
 Since it precompute a minimum of all subarrays of size $2^j$ where j varies from 0 to $log_n$. the time complexity of the preprocessing is $O(nlog_n)$.
 
