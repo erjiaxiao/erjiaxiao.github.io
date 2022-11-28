@@ -34,7 +34,7 @@ jobs:
         GIT_NAME: erjiaxiao
         GIT_EMAIL: erjiaxiao@gmail.com
         REPO: github.com/erjiaxiao/erjiaxiao.github.io
-        GH_TOKEN: ${{ github.token }}     # can be created or changed in the Github/Repository/Setting/Secrets/Actions
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}     # can be created or changed in the Github/Repository/Setting/Secrets/Actions
       run: |
         cd ./public && echo cloudwind.tech > CNAME && git init && git add .
         git config --global user.name $GIT_NAME
