@@ -2,7 +2,7 @@
 title: Combinations of Max-Heap and Min-Heap
 date: 2022-05-13 09:00:00
 categories: Algorithm
-index_img: /img/heap.png
+index_img: /img/heap_combination.png
 excerpt: Heap is usually used to find the maximum or the minimum in a number array efficiently. Combinations of Max-Heap and Min-Heap could achieve more advanced searching goals.
 ---
 
