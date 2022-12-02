@@ -14,7 +14,7 @@ The International Collegiate Programming Contest is an algorithmic programming c
 
 ## Templates
 
-```
+```cpp
 #include <iostream>
 #include <iomanip>
 #include <cstdio>
