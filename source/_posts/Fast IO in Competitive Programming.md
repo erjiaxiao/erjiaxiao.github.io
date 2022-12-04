@@ -3,16 +3,16 @@ title: Fast I/O in Competitive Programming
 date: 2022-04-20 09:00:00
 categories: Algorithm
 index_img: /img/fast_io.png
-excerpt: In order to avoid the annoying TLE(Time Limit Exceed) problem in competitive programming, it is important to read input as fast as possible so we save valuable time.
+excerpt: To avoid the vexing TLE (Time Limit Exceed) problem in competitive programming, it is critical to read input as quickly as possible in order to save significant time.
 ---
 
 ## Introduction
 
-In competitive programming, it is important to read input as fast as possible so we save valuable time. You must have seen various problem statements saying: "Warning: Large I/O data, be careful with certain languages (though most should be OK if the algorithm is well designed and has low time complexity)". The key for such problems is to use Faster I/O techniques. 
+In competitive programming, it is critical to read input as quickly as possible in order to save significant time. You've probably seen problem statements like this: "Warning: Large I/O data, be careful with certain languages (though most should be OK if the algorithm is well designed and has low time complexity)". The key for such problems is to use Faster I/O techniques. 
 
 ## Method 1
 
-It is often recommended to use scanf/printf instead of cin/cout for fast input and output. However, you can still use cin/cout and achieve the same speed as scanf/printf by including the following two lines in your main() function:
+For rapid input and output, `scanf` and `printf` are frequently suggested over cin/cout. However, by putting the following two lines in your `main()` method, you may still utilize `cin` and `cout` and obtain the same speed as `scanf` and `printf`:
 
 ```cpp
 ios_base::sync_with_stdio(false);
@@ -24,9 +24,9 @@ It toggles on or off the synchronization of all the C++ standard streams with th
 cin.tie(NULL);
 ```
 
-tie() is a method that simply guarantees the flushing of std::cout before std::cin accepts an input. This is useful for interactive console programs which require the console to be updated constantly but also slows down the program for large I/O. The NULL part just returns a NULL pointer.
+tie() is a function that simply ensures that `std::cout` is flushed before `std::cin` takes an input. This is useful for interactive console programs that require the console to be constantly updated, but it slows the program down for massive I/O.
 
-So your template for competitive programming could look like this:  
+So your competitive programming template might look like this:
 
 ```cpp
 #include <bits/stdc++.h>
@@ -40,11 +40,11 @@ int main()
 }
 ```
 
-It is recommended to use ```cout << "\n";``` instead of ```cout << endl;```. ```endl``` is slower because it forces a flushing stream, which is usually unnecessary. (You’d need to flush if you were writing, say, an interactive progress bar, but not when writing a million lines of data.) So write ```'\n'``` instead of endl.
+It is recommended to use `cout << "\n"` instead of `cout << endl`. `endl` is slower because it forces a flushing stream, which is usually unnecessary. (You’d need to flush if you were writing, say, an interactive progress bar, but not when writing a million lines of data.) So write `"\n"` instead of endl.
 
 ## Method 2 (Fastest)
 
-If above methods are not fast enough, here is an exclusive code to read and write integers in the fastest way.
+If the preceding methods are not fast enough, here is an exclusive code to read and write integers as quickly as possible.
 
 ```cpp
 // 快读快写

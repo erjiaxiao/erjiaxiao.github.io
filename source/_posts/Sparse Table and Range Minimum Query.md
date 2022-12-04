@@ -9,7 +9,7 @@ excerpt: Sparse table concept is used for fast queries on a set of static data w
 
 ## Introduction
 
-We have an array arr[0 . . . n-1]. We should be able to efficiently find the minimum value from index L (query start) to R (query end) where 0 <= L <= R <= n-1. Consider a situation when there are many range queries as following:
+We have an array `arr[0... n-1]`. We should be able to discover the smallest number from index $L$ (query start) to index $R$ (query end) where $0 ≤ L ≤ R ≤ n-1$. Consider the following scenario with a large number of range queries:
 
 ```
 Input:  arr[]   = {7, 2, 3, 0, 5, 10, 3, 12, 18};
@@ -20,11 +20,11 @@ Output: Minimum of [0, 4] is 0
         Minimum of [7, 8] is 12
 ```
 
-This is the **Range Minimum Query** problem. A brute force solution is to run a loop from L to R and find the minimum element in the given range. This solution takes $O(n)$ time to query in the worst case.
+This is the **Range Minimum Query** problem. A brute force solution is to run a loop from $L$ to $R$ and find the minimum element in the given range. This solution takes $O(n)$ time to query in the worst case.
 
 ## Method 1
 
-A Simple Solution is to create a 2D array lookup[][] where an entry lookup[i][j] stores the minimum value in range arr[i..j]. The minimum of a given range can now be calculated in $O(1)$ time.
+A Simple Solution is to create a 2D array `lookup[][]` where an entry `lookup[i][j]` stores the minimum value in range `arr[i..j]`. The minimum of a given range can now be calculated in $O(1)$ time.
 
 ![Lookup Table](/img/RMQ_simple.png)
 
@@ -32,12 +32,11 @@ This approach supports queries in $O(1)$, but preprocessing takes $O(n^2)$ time.
 
 ## Method 2 (Sparse Table) 
 
-The idea is to precompute a minimum of all subarrays of size $2^j$ where j varies from 0 to $log_n$. Like method 1, we make a lookup table. Here lookup[i][j] contains a minimum of range starting from i and of size $2^j$. For example lookup[0][3] contains a minimum of range [0, 7] (starting with 0 and of size $2^3$).
+The idea is to precompute a minimum of all subarrays of size $2^j$ where j varies from 0 to $log_n$. Like method 1, we make a lookup table. Here `lookup[i][j]` contains a minimum of range starting from i and of size $2^j$. For example `lookup[0][3]` contains a minimum of range [0, 7] (starting with 0 and of size $2^3$).
 
 ### Preprocessing
 
-How to fill this lookup table? The idea is simple, fill in a bottom-up manner using previously computed values. 
-For example, to find a minimum of range [0, 7], we can use a minimum of the following two.
+How should this lookup table be filled? The concept is straightforward: fill from the bottom up using previously computed data. To obtain a minimum of range [0, 7], for example, we can utilize the minimum of the two following.
 
 a) Minimum of range [0, 3]
 
@@ -59,8 +58,9 @@ Since it precompute a minimum of all subarrays of size $2^j$ where j varies from
 
 ### Query
 
-For any arbitrary range [l, R], we need to use ranges that are in powers of 2. The idea is to use the closest power of 2. We always need to do at most one comparison (compare a minimum of two ranges which are powers of 2). One range starts with L and ends with “L + closest-power-of-2”. The other range ends at R and starts with “R – same-closest-power-of-2 + 1”. For example, if the given range is (2, 10), we compare a minimum of two ranges (2, 9) and (3, 10). 
-Based on the above example, below is the formula,
+We must employ ranges in powers of 2 for any arbitrary range [L, R]. The goal is to use the nearest power of two. We must always make at least one comparison (compare a minimum of two ranges which are powers of 2). One set of numbers begins with L and concludes with "L + closest-power-of-2". The alternative range begins with "R - same-closest-power-of-2 + 1" and ends at R. For instance, if the specified range is (2, 10), we compare at least two ranges (2, 9) and (3, 10).
+
+Based on the preceding example, the formula is as follows:
 
 ```cpp
 j = floor(log(R-L+1));

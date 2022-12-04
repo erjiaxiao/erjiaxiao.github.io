@@ -1,14 +1,16 @@
 ---
-title: Competitive Programming Templates
+title: Templates for Competitive Programming
 date: 2022-02-23 09:00:00
 categories: Algorithm
 index_img: /img/acmicpc.png
-excerpt: The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three, representing their university, work to solve the most real-world problems.
+excerpt: Some time-saving templates for the International Collegiate Programming Contest
 ---
 
 ## Introduction
 
-The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three, representing their university, work to solve the most real-world problems, fostering collaboration, creativity, innovation, and the ability to perform under pressure. Since every minute in the match is precious, we could prepare some time-saving templates ahead of time.
+The International Collegiate Programming Contest is an algorithmic programming contest for college students. Teams of three students, each representing their university, compete to find solutions to the toughest challenges in the real world while encouraging teamwork, inventiveness, and the capacity to work under pressure. 
+
+We could create some time-saving templates in advance because every second of the game is valuable.
 
 ![ACM/ICPC](/img/acmicpc.jpg)
 
@@ -32,7 +34,10 @@ The International Collegiate Programming Contest is an algorithmic programming c
 #include <set>
 #include <unordered_set>
 #include <bitset>
+
 using namespace std;
+
+#define LOCAL
 // STL库常用(vector, map, set, pair)
 #define pii pair<int, int>
 #define pdd pair<double, double>
@@ -41,44 +46,7 @@ using namespace std;
 //常量
 #define PI (acos(-1.0))
 #define INF 0x3f3f3f3f
-//必加
-#ifdef LOCAL
-#include <cassert>
-#define dbg(...)                                        \
-    do                                                  \
-    {                                                   \
-        cerr << "\033[33;1m" << #__VA_ARGS__ << " -> "; \
-        err(__VA_ARGS__);                               \
-    } while (0)
-void err()
-{
-    cerr << "\033[39;0m" << endl;
-}
-template <template <typename...> class T, typename t, typename... A>
-void err(T<t> a, A... x)
-{
-    for (auto v : a)
-        cerr << v << ' ';
-    cerr << ", ";
-    err(x...);
-}
-template <typename T, typename... A>
-void err(T a, A... x)
-{
-    cerr << a << ' ';
-    err(x...);
-}
-template <typename T>
-void err(T *a, int len)
-{
-    for (int i = 0; i < len; i++)
-        cerr << a[i] << ' ';
-    err();
-}
-#else
-#define dbg(...)
-#define assert(...)
-#endif
+
 typedef unsigned long long ull;
 typedef long long ll;
 typedef double db;
@@ -211,7 +179,11 @@ inline bool isprime(T n)
     }
     return 1;
 }
-/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/*------------------------------------------------------------------------------------------ */
+/*------------------------------------------------------------------------------------------ */
+/*------------------------------------------------------------------------------------------ */
+/*------------------------------------------------------------------------------------------ */
 
 const int MAXN = 6e5 + 10;
 
@@ -250,18 +222,19 @@ int main()
 {
 #ifdef LOCAL
     clock_t c1 = clock();
-    freopen("D:\\Cpp\\1.in", "r", stdin);
-    freopen("D:\\Cpp\\1.out", "w", stdout);
+    freopen("data.in", "r", stdin);
+    freopen("data.out", "w", stdout);
 #endif
+
+    // code here
     //--------------------------------------------
+
     scanf("%d", &n);
     for (int i = 1; i <= n; i++)
         scanf("%d", &a[i].x);
     for (int i = 1; i <= n; i++)
         scanf("%d", &a[i].v);
     sort(a + 1, a + 1 + n);
-    // for (int i = 1; i <= n; i++)
-    // printf("%d", a[i].x);
     long double l = a[1].x, r = a[n].x;
     rM = 1;
     while (sgn(l - r))
@@ -271,14 +244,13 @@ int main()
             l = mid;
         else
             r = mid;
-        // printf("%.9lf %.9lf\n", l, lm);
     }
-    // printf("%.9lf\n", lM);
     printf("%.9Lf", lM);
 
-//--------------------------------------------
+    //--------------------------------------------
+
 #ifdef LOCAL
-    cerr << "Time Used:" << clock() - c1 << "ms" << endl;
+    cout << "Time Used:" << clock() - c1 << "ms" << endl;
 #endif
     return 0;
 }
